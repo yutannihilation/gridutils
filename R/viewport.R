@@ -1,5 +1,6 @@
 #' Highlight the current viewport
 #'
+#' @name you-are-here
 #' @export
 gu_you_are_here <- function() {
   x <- grid.rect(gp = gpar(col = rgb(1, 0, 0, .7), fill = rgb(1, 0, 0, .3)))

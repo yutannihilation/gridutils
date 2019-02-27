@@ -4,9 +4,9 @@
 \name{gridutils-package}
 \alias{gridutils}
 \alias{gridutils-package}
-\title{gridutils: What the Package Does (One Line, Title Case)}
+\title{gridutils: Small Utilities For grid Package}
 \description{
-What the package does (one paragraph).
+(This is my personal practice to play with grid).
 }
 \author{
 \strong{Maintainer}: Hiroaki Yutani \email{yutani.ini@gamil.com}

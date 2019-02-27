@@ -8,5 +8,6 @@
 gu_you_are_here()
 }
 \description{
-Highlight the current viewport
+Unlike \code{\link[grid:showViewport]{grid::showViewport()}}, \code{gu_show_vp()} soon remove the highlight after
+a second
 }

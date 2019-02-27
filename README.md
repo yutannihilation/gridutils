@@ -20,7 +20,8 @@ devtools::install_github("yutannihilation/gridutils")
 
 ### `gu_you_are_here()`
 
-Highlight the current viewport.
+Highlight the current viewport. Unlike `grid::showViewport()`, the
+highlight is removed after a while.
 
 ``` r
 gu_you_are_here()

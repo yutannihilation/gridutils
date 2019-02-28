@@ -28,10 +28,37 @@ gu_get_vp <- function(vp = NULL) {
 }
 
 #' @export
-str.vpTree <- function(x) {
-
+gu_print_vp <- function(vp = grid::current.vpTree()) {
+  cat(as_tree(vp), sep = "\n")
 }
 
-cat_vptree <- function(x, indent = 0) {
+#' @export
+as_tree <- function(x, ...) UseMethod("as_tree")
 
+#' @export
+as_tree.viewport <- function(x, ...) x$name
+
+#' @export
+as_tree.vpTree <- function(x, ...) {
+  sub_trees <- as_tree(x$children)
+
+  sub_trees <- purrr::map2(sub_trees, seq_along(sub_trees) == length(sub_trees),
+    function(x, is_last) {
+      left <- rlang::rep_along(x, ifelse(is_last, " ", "\u2502"))
+      left[1] <- ifelse(is_last, "\u2514", "\u251C")
+      paste0(left, x)
+    }
+  )
+
+  c(
+    x$parent$name,
+    purrr::flatten_chr(sub_trees)
+  )
 }
+
+#' @export
+as_tree.vpList <- function(x, ...) {
+  purrr::map(x, as_tree)
+}
+
+as_tree.list <- as_tree.vpList

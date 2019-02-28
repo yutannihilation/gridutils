@@ -36,6 +36,19 @@ Highlight the current viewport. Unlike `grid::showViewport()`, the highlight is 
 gu_you_are_here()
 ```
 
+### `gu_print_vp()`
+
+```{r}
+library(gridutils)
+
+library(ggplot2)
+library(grid)
+
+p <- ggplot(mtcars, aes(wt, mpg))
+p + geom_point() + facet_wrap(~ cyl)
+gu_print_vp()
+```
+
 ## Resources about grid
 
 * [R Graphics, Third Edition](https://www.crcpress.com/R-Graphics-Third-Edition/Murrell/p/book/9781498789059) by Paul Murrel
